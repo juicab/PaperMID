@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -118,21 +119,53 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Style\Back\css\bootstrap-table.css" />
+    <Content Include="Style\Back\css\bootstrap-theme.css" />
+    <Content Include="Style\Back\css\bootstrap-theme.min.css" />
+    <Content Include="Style\Back\css\bootstrap.css" />
+    <Content Include="Style\Back\css\bootstrap.min.css" />
+    <Content Include="Style\Back\css\datepicker.css" />
+    <Content Include="Style\Back\css\datepicker3.css" />
+    <Content Include="Style\Back\css\font-awesome.min.css" />
+    <Content Include="Style\Back\css\styles.css" />
+    <Content Include="Style\Back\fonts\fontawesome-webfont.svg" />
+    <Content Include="Style\Back\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Style\Back\js\bootstrap-datepicker.js" />
+    <Content Include="Style\Back\js\bootstrap.js" />
+    <Content Include="Style\Back\js\bootstrap.min.js" />
+    <Content Include="Style\Back\js\chart-data.js" />
+    <Content Include="Style\Back\js\chart.min.js" />
+    <Content Include="Style\Back\js\custom.js" />
+    <Content Include="Style\Back\js\easypiechart-data.js" />
+    <Content Include="Style\Back\js\easypiechart.js" />
+    <Content Include="Style\Back\js\html5shiv.min.js" />
+    <Content Include="Style\Back\js\jquery-1.11.1.min.js" />
+    <Content Include="Style\Back\js\lumino.glyphs.js" />
+    <Content Include="Style\Back\js\npm.js" />
+    <Content Include="Style\Back\js\respond.min.js" />
     <Content Include="Style\css\bootstrap.css" />
     <Content Include="Style\css\bootstrap.min.css" />
     <Content Include="Style\css\jquery.gmaps.css" />
+    <Content Include="Style\css\materialize.css" />
     <Content Include="Style\css\mdb.css" />
     <Content Include="Style\css\mdb.min.css" />
     <Content Include="Style\img\color.jpg" />
+    <Content Include="Style\img\colores.jpg" />
     <Content Include="Style\img\Contactanos.png" />
     <Content Include="Style\img\crayon.jpg" />
+    <Content Include="Style\img\cristal.jpg" />
+    <Content Include="Style\img\Favicon\logopage.png" />
+    <Content Include="Style\img\footer.png" />
+    <Content Include="Style\img\parallax\granmarkbanner.png" />
+    <Content Include="Style\img\parallax\header54barrilito.jpg" />
     <Content Include="Style\img\image.png" />
-    <Content Include="Style\img\libreta.jpg" />
     <Content Include="Style\img\lightbox\default-skin.png" />
     <Content Include="Style\img\lightbox\default-skin.svg" />
     <Content Include="Style\img\lightbox\preloader.gif" />
+    <Content Include="Style\img\Logo.png" />
     <Content Include="Style\img\Logos\BIC_logo.png" />
     <Content Include="Style\img\Logos\carrito.png" />
+    <Content Include="Style\img\Logos\granmark.png" />
     <Content Include="Style\img\Logos\indra.png" />
     <Content Include="Style\img\Logos\Kole.gif" />
     <Content Include="Style\img\Logos\logobarrilitoblanco.png" />
@@ -149,12 +182,13 @@
     <Content Include="Style\img\overlays\07.png" />
     <Content Include="Style\img\overlays\08.png" />
     <Content Include="Style\img\overlays\09.png" />
-    <Content Include="Style\img\quienes-somos.png" />
+    <Content Include="Style\img\parallax\bannerBic.png" />
     <Content Include="Style\img\Servicios\cart.png" />
     <Content Include="Style\img\Servicios\entrega.png" />
     <Content Include="Style\img\Servicios\paypal.png" />
     <Content Include="Style\img\svg\arrow_left.svg" />
     <Content Include="Style\img\svg\arrow_right.svg" />
+    <Content Include="Style\img\tajador.jpg" />
     <Content Include="Style\img\valores.png" />
     <Content Include="Style\img\vision.png" />
     <Content Include="Style\js\bootstrap.js" />
@@ -195,14 +229,26 @@
     <Content Include="Style\Login\vendor\tilt\tilt.jquery.min.js" />
     <Content Include="Style\scripts\main.js" />
     <Content Include="Style\styles\main.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\InventarioController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\PromocionController.cs" />
+    <Compile Include="Controllers\ProveedorController.cs" />
     <Compile Include="Controllers\PublicoController.cs" />
+    <Compile Include="Controllers\TipoProductoController.cs" />
+    <Compile Include="Controllers\VentaController.cs" />
+    <Compile Include="DAL\ConexionDAL.cs" />
+    <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -294,6 +340,34 @@
     <Content Include="Views\Publico\Contacto.cshtml" />
     <Content Include="Views\Publico\IniciarSesión.cshtml" />
     <Content Include="Views\Publico\Registro.cshtml" />
+    <None Include="Properties\PublishProfiles\papermid1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\papermid1 - Web Deploy.pubxml" />
+    <Content Include="Views\Master\Administrador.cshtml" />
+    <Content Include="Style\Back\css\bootstrap-theme.css.map" />
+    <Content Include="Style\Back\css\bootstrap-theme.min.css.map" />
+    <Content Include="Style\Back\css\bootstrap.css.map" />
+    <Content Include="Style\Back\css\bootstrap.min.css.map" />
+    <Content Include="Style\Back\fonts\fontawesome-webfont.eot" />
+    <Content Include="Style\Back\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Style\Back\fonts\fontawesome-webfont.woff" />
+    <Content Include="Style\Back\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Style\Back\fonts\FontAwesome.otf" />
+    <Content Include="Style\Back\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Style\Back\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Style\Back\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Style\Back\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Style\Back\sass\.sass-cache\deff34d1f5b7167181b556002c25068d6adc024d\styles.scssc" />
+    <Content Include="Style\Back\sass\styles.scss" />
+    <Content Include="Style\Back\tables\data1.json" />
+    <Content Include="Style\Back\tables\data2.json" />
+    <Content Include="Views\Admin\Inicio.cshtml" />
+    <Content Include="Views\Producto\Productos.cshtml" />
+    <Content Include="Views\Proveedor\Proveedores.cshtml" />
+    <Content Include="Views\TipoProducto\TipoProducto.cshtml" />
+    <Content Include="Views\Promocion\Promociones.cshtml" />
+    <Content Include="Views\Inventario\Ingreso.cshtml" />
+    <Content Include="Views\Inventario\Egreso.cshtml" />
+    <Content Include="Views\Venta\Venta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -303,7 +377,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

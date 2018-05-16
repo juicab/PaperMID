@@ -8,6 +8,7 @@
     <meta name="description" content="Material design landing page template built by TemplateFlip.com" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="~/Style/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="~/Style/img/Favicon/logopage.png" />
     <link href="~/Style/css/mdb.min.css" rel="stylesheet" />
     <link href="~/Style/styles/main.css" rel="stylesheet" />
     <link href="~/Style/css/jquery.gmaps.css" rel="stylesheet" />
@@ -29,8 +30,7 @@
             border-radius: 20px;
             background-color: #EC2C91;
             margin-left: 8px;
-            font-weight: bold;
-            color: white;
+            color: black;
             text-align: center;
         }
 
@@ -38,7 +38,7 @@
             border-radius: 20px;
             background-color: #96258D;
             margin-left: 8px;
-            font-weight: bold;
+            color: black;
             text-align: center;
         }
 
@@ -46,7 +46,8 @@
             border-radius: 20px;
             background-color: #CBD93E;
             margin-left: 8px;
-            font-weight: bold;
+            /*font-weight: bold;*/
+            color: black;
             text-align: center;
         }
 
@@ -54,14 +55,13 @@
             border-radius: 20px;
             background-color: #05B1BB;
             margin-left: 8px;
-            font-weight: bold;
+            color: black;
             text-align: center;
         }
 
         .reg {
             background-color: #FCB817;
             margin-left: 8px;
-            font-weight: bold;
             text-align: center;
         }
 
@@ -76,15 +76,26 @@
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id="navbar">
 
             <div class="container">
-                <a class="navbar-brand" href="#"><strong>PaperMID</strong></a>
+                <a class="navbar-brand" href="@Url.Action("Inicio","Publico")"><img class="logo" src="~/Style/img/logoweb.png" style="width:170px; height:50px;" ></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                @*<form class="form-inline my-2 my-lg-0 ml-auto">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+                </form>*@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item prod"><a class="nav-link active" href="#">Productos</a></li>
                         <li class="nav-item qui"><a class="nav-link active" href="@Url.Action("QuiénesSomos","Publico")">Quiénes Somos</a></li>
                         <li class="nav-item cont"><a class="nav-link active" href="@Url.Action("Contacto","Publico")">Contacto</a></li>
-                        <li class="nav-item ini"><a class="nav-link" href="@Url.Action("IniciarSesión","Publico")">Iniciar Sesión</a></li>
-                    </ul><a class="btn reg btn-rounded my-0" href="@Url.Action("Registro","Publico")">Registro</a>
+                        <li class="nav-item ini dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Más</a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="@Url.Action("Registro","Publico")">Registro</a>
+                                <a class="dropdown-item" href="#">Citas</a>
+                            </div>
+                        </li>
+                    </ul><a class="btn reg btn-rounded my-0" href="@Url.Action("IniciarSesión","Publico")">Iniciar Sesión</a>
+                    @*@Url.Action("Registro", "Publico")*@
                 </div>
             </div>
         </nav>
@@ -96,8 +107,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="mb-5 flex-center" style="align-content:center; align-items:center;">
-                        <%-- Aqui van las imagenes de las marcas --%>
+                    <div class="flex-center" style="align-content:center; align-items:center;">
+                        <img src="~/Style/img/footer.png" style="width:760px; height:50px;"/>
                     </div>
                 </div>
             </div>
@@ -114,5 +125,17 @@
     <script src="~/Style/js/bootstrap.min.js"></script>
     <script src="~/Style/js/mdb.js"></script>
     <script>new WOW().init();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.parallax');
+            var instances = M.Parallax.init(elems, options);
+        });
+
+        // Or with jQuery
+
+        $(document).ready(function () {
+            $('.parallax').parallax();
+        });
+    </script>
 </body>
 </html>

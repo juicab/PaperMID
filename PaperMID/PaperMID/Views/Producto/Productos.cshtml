@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewBag.Title = "Productos";
+    Layout = "~/Views/Master/Administrador.cshtml";
+}
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li class="active">Administrador</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Productos</h2>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Datos</div>
+                <div class="panel-body">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Código</label>
+                            <input class="form-control" type="text" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Cantidad Disponible</label>
+                            <input class="form-control" type="number">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Cantidad Minima</label>
+                            <input class="form-control" type="number">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Descuento</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Precio de Compra</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Precio de Venta</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>ff</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Tipo de Producto</label>
+                            <select class="form-control">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                                <option>Option 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Proveedor</label>
+                            <select class="form-control">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                                <option>Option 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Seleccione Imagen</label>
+                            <input type="file">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Descripción del Producto</label>
+                            <textarea class="form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.panel-->
+        </div><!-- /.panel-->
+    </div><!-- /.col-->
+    <div class="col-sm-12">
+        <p class="back-link">PaperMID de <a href="#">Papelería Mérida</a></p>
+    </div>
+</div><!-- /.row -->
+<!--/.main-->

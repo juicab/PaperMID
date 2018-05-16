@@ -41,10 +41,16 @@
                         <input class="input100" type="text" name="txtUsuario" placeholder="Usuario" />
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Ingrese un Correo Electrónico Valido">
+                        <input class="input100" type="email" name="pass" placeholder="Correo Electronico" />
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                         </span>
                     </div>
-
                     <div class="wrap-input100 validate-input" data-validate="Ingrese una Contraseña Valida">
                         <input class="input100" type="password" name="pass" placeholder="Contraseña" />
                         <span class="focus-input100"></span>
@@ -52,7 +58,13 @@
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
                     </div>
-
+                    <div class="wrap-input100 validate-input" data-validate="Las contraseñas deben ser iguales">
+                        <input class="input100" type="password" name="repass" placeholder="Confirmar contraseña" />
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
                     <div class="container-login100-form-btn">
                         <button class="login100-form-btn">
                             Iniciar
@@ -60,31 +72,12 @@
                     </div>
 
                     <div class="text-center p-t-12">
-                        <span class="txt1">
-                            ¿Olvidaste tu
-                        </span>
-                        <a class="txt2" href="#">
-                            Contraseña?
-                        </a>
-                    </div>
-                    <div class="text-center p-t-12">
-                        <span class="txt1">
-                            ¿No tienes cuenta? Registrate
-                        </span>
-                        <a class="txt2" href="#">
-                            Aquí
-                        </a>
-                    </div>
-                    <div class="text-center p-t-12">
-                        <a class="txt2" href="InicioP.aspx">
+                        <a class="txt2" href="@Url.Action("Inicio","Publico")">
                             Regresar al Inicio
                             <i class="fa fa-long-arrow-left m-l-5" aria-hidden="true"></i>
                         </a>
                     </div>
 
-                    <div class="text-center p-t-136">
-
-                    </div>
 
                 </form>
                 <div class="login100-pic js-tilt" data-tilt="">
