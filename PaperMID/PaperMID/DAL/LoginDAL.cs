@@ -30,38 +30,22 @@ namespace PaperMID.DAL
             return sb.ToString();
         }
 
-        //public int Comprobar_Usuario(LoginModel oLoginModel)
-        //{
-        //    try
-        //    {
-        //        SqlCommand Cmd = new SqlCommand("EXEC SP_Login @Usuario,@ContraseñaUsu", oConexionDAL.EstablecerConexion());
-        //        Cmd.Parameters.Add("@Usuario", SqlDbType.VarChar).Value = oLoginModel.Usuario;
-        //        Cmd.Parameters.Add("@ContraseñaUsu", SqlDbType.VarChar).Value = Encriptar(oLoginModel.ContraseñaUsu);
-        //        string encrip = Encriptar(oLoginModel.ContraseñaUsu);
-        //        Cmd.CommandType = CommandType.Text;
-        //        var _oLogin_RespuestaModel = new Login_RespuestaModel();
-        //        //Recolección de datos.
-        //        oConexionDAL.AbrirConexion();
-        //        SqlDataReader Datos = Cmd.ExecuteReader();
-        //        while (Datos.Read())
-        //        {
-        //            _oLogin_RespuestaModel.IdUsuario = int.Parse(Datos[0].ToString());
-        //            _oLogin_RespuestaModel.Usuario = Datos[1].ToString();
-        //            _oLogin_RespuestaModel.Modulo = Datos[3].ToString();
-        //            _oLogin_RespuestaModel.NombreUsu = Datos[4].ToString();
+        public int verificarAdmin(string usu,string contra)
+        {
+            string contras = Encriptar(contra);
+            string query = ("Select count(*) from Usuario where Usuario.Usuario = '" + usu + "' and Usuario.ContraseñaUsu = '" + contras + "' and Usuario.IdTipoUsuario1 = 1");
+            return oConexionDAL.EjecutarSQL(query);
+        }
 
-        //        }
-        //        oConexionDAL.CerrarConexion();
-        //        //Comprobación.
-        //        return (_oLogin_RespuestaModel.IdUsuario > 0) ? _oLogin_RespuestaModel : null;
+        public int verificarCliente(string usu, string contra)
+        {
+            SqlCommand cmd = new SqlCommand("Select count(*) from Usuario where Usuario.Usuario='@Usuario' and Usuario.ContraseñaUsu='@Contraseña' and Usuario.IdTipoUsuario1=2");
+            cmd.Parameters.Add("@Usuario", SqlDbType.VarChar).Value = usu;
+            cmd.Parameters.Add("@Contraseña", SqlDbType.VarChar).Value = Encriptar(contra);
+            return oConexionDAL.EjecutarComando(cmd);
+        }
 
-        //    }
-        //    catch (Exception)
-        //    {
 
-        //        return null;
-        //    }
 
-        //}
     }
 }

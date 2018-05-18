@@ -16,11 +16,11 @@ namespace PaperMID.DAL
         DataSet DAtaSetAdaptador;
 
         String Servidor = "Data Source=SQL7004.site4now.net;Initial Catalog=DB_A386B8_PaperMID;User Id=DB_A386B8_PaperMID_admin;Password=Cs18191819;";
-        String localhost = "Data Source=DESKTOP-8BM8OCF; Initial Catalog=DB_A386B8_PaperMID; Integrated Security=True";
+        String localhost = "Data Source=Jesus_Uicab;Initial Catalog=DB_A386B8_PaperMID;Integrated Security=True";
 
         public SqlConnection EstablecerConexion()
         {
-            Con = new SqlConnection(Servidor);
+            Con = new SqlConnection(localhost);
 
             return Con;
         }
@@ -57,8 +57,9 @@ namespace PaperMID.DAL
             }
         }
 
-        public int EjecutarSQL(SqlCommand SqlComando)
+        public int EjecutarComando(SqlCommand SqlComando)
         {
+            //Insert,Delete,Update
             Cmd = new SqlCommand();
             Cmd = SqlComando;
             Cmd.Connection = this.EstablecerConexion();
