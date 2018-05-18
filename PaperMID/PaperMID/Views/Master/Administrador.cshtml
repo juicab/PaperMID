@@ -1,5 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@if(Session["Usuario"]!=null)
+{
 
+}
+else
+{
+    Response.Redirect("~/Publico/Inicio");
+    Response.Cache.SetNoStore();
+}
+<!DOCTYPE html>
 <html lang="es-mx">
 <head>
     <meta charset="utf-8">
@@ -40,7 +48,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#">
+                                <a href="/Admin/CerrarSesion">
                                     <em class="fa fa-power-off"></em> Cerrar Sesión
                                 </a>
                             </li>
@@ -88,10 +96,13 @@
             <div class="profile-userpic">
                 <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
             </div>
+            @try {
             <div class="profile-usertitle">
-                <div class="profile-usertitle-name">Administrador</div>
+                <div class="profile-usertitle-name">@Session["Usuario"].ToString()</div>
                 <div class="profile-usertitle-status"><span class="indicator label-success"></span>En linea</div>
             </div>
+            }catch
+            {}
             <div class="clear"></div>
         </div>
         <div class="divider"></div>

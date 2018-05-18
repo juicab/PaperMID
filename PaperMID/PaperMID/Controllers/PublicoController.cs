@@ -21,8 +21,6 @@ namespace PaperMID.Controllers
         public ActionResult VerificarUsuario(string usuario,string contraseña)
         {
             oLoginDAL = new LoginDAL();
-            int cliente = oLoginDAL.verificarCliente(usuario, contraseña);
-            int admin = oLoginDAL.verificarAdmin(usuario, contraseña);
             if(ModelState.IsValid)
             {
                 if(oLoginDAL.verificarCliente(usuario,contraseña)==1)

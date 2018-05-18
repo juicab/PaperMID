@@ -13,5 +13,11 @@ namespace PaperMID.Controllers
         {
             return View();
         }
+
+        public ActionResult CerrarSesion()
+        {
+            Session.Abandon();
+            return RedirectToAction("Inicio", "Publico");
+        }
     }
 }
