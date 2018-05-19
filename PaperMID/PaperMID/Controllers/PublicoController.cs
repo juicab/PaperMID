@@ -56,6 +56,13 @@ namespace PaperMID.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EnviarMensaje(string mensaje,string nombre,string asunto,string telefono,string correo)
+        {
+            return View();
+        }
+
         public ActionResult IniciarSesión()
         {
             return View();

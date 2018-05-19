@@ -26,6 +26,7 @@ namespace PaperMID.Controllers
                 int Resp = 0; Resp = oProveedorDAL.Agregar(nombre, telefon, correo);
                 if (Resp == 1)
                 {
+                   
                     return RedirectToAction("Proveedores", "Proveedor");
                 }
                 else

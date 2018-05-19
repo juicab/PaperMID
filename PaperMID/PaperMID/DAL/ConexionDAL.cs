@@ -21,7 +21,7 @@ namespace PaperMID.DAL
 
         public SqlConnection EstablecerConexion()
         {
-            Con = new SqlConnection(estadia);
+            Con = new SqlConnection(Servidor);
 
             return Con;
         }

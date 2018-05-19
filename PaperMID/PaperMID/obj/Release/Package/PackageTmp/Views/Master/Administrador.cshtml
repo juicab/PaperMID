@@ -1,0 +1,156 @@
+﻿@if(Session["Usuario"]!=null)
+{
+
+}
+else
+{
+    Response.Redirect("~/Publico/Inicio");
+    Response.Cache.SetNoStore();
+}
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lumino - Dashboard</title>
+    <link href="~/Style/Back/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Style/Back/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Style/Back/css/datepicker3.css" rel="stylesheet" />
+    <link href="~/Style/Back/css/styles.css" rel="stylesheet" />
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span>PaperMID</span>Admin</a>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <em class="fa fa-cogs"></em>
+                        </a>
+                        <ul class="dropdown-menu dropdown-messages">
+                            <li>
+                                <a href="#">
+                                    <em class="fa fa-cog"></em> Configuración
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="/Admin/CerrarSesion">
+                                    <em class="fa fa-power-off"></em> Cerrar Sesión
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    @*<li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <em class="fa fa-bell"></em><span class="label label-info">5</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <em class="fa fa-envelope"></em> 1 New Message
+                                        <span class="pull-right text-muted small">3 mins ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <em class="fa fa-heart"></em> 12 New Likes
+                                        <span class="pull-right text-muted small">4 mins ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <em class="fa fa-user"></em> 5 New Followers
+                                        <span class="pull-right text-muted small">4 mins ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>*@
+                </ul>
+            </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+        <div class="profile-sidebar">
+            <div class="profile-userpic">
+                <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
+            </div>
+            @try {
+            <div class="profile-usertitle">
+                <div class="profile-usertitle-name">@Session["Usuario"].ToString()</div>
+                <div class="profile-usertitle-status"><span class="indicator label-success"></span>En linea</div>
+            </div>
+            }catch
+            {}
+            <div class="clear"></div>
+        </div>
+        <div class="divider"></div>
+        <ul class="nav menu">
+            <li class=""><a href="@Url.Action("Inicio","Admin")"><em class="fa fa-dashboard">&nbsp;</em> Inicio</a></li>
+            <li><a href="@Url.Action("Proveedores","Proveedor")"><em class="fa fa-calendar">&nbsp;</em> Proveedores</a></li>
+            <li><a href="@Url.Action("TipoProducto","TipoProducto")"><em class="fa fa-bar-chart">&nbsp;</em> Tipo de Producto</a></li>
+            <li><a href="@Url.Action("Productos","Producto")"><em class="fa fa-toggle-off">&nbsp;</em>Productos</a></li>
+            <li><a href="@Url.Action("Promociones","Promocion")"><em class="fa fa-clone">&nbsp;</em>Promociones</a></li>
+            <li class="parent ">
+                <a data-toggle="collapse" href="#sub-item-1">
+                    <em class="fa fa-navicon">&nbsp;</em> Inventario <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+                </a>
+                <ul class="children collapse" id="sub-item-1">
+                    <li>
+                        <a class="" href="@Url.Action("Ingreso","Inventario")">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Ingreso
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="@Url.Action("Egreso","Inventario")">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Egreso
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="@Url.Action("Venta","Venta")"><em class="fa fa-clone">&nbsp;</em>Venta</a></li>
+        </ul>
+    </div><!--/.sidebar-->
+    @RenderBody()
+    <script src="~/Style/Back/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Style/Back/js/bootstrap.min.js"></script>
+    <script src="~/Style/Back/js/chart.min.js"></script>
+    <script src="~/Style/Back/js/chart-data.js"></script>
+    <script src="~/Style/Back/js/easypiechart.js"></script>
+    <script src="~/Style/Back/js/easypiechart-data.js"></script>
+    <script src="~/Style/Back/js/bootstrap-datepicker.js"></script>
+    <script src="~/Style/Back/js/custom.js"></script>
+    <script>
+		window.onload = function () {
+	var chart1 = document.getElementById("line-chart").getContext("2d");
+	window.myLine = new Chart(chart1).Line(lineChartData, {
+	responsive: true,
+	scaleLineColor: "rgba(0,0,0,.2)",
+	scaleGridLineColor: "rgba(0,0,0,.05)",
+	scaleFontColor: "#c5c7cc"
+	});
+};
+    </script>
+</body>
+</html>
