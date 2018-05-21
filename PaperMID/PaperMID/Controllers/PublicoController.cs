@@ -20,17 +20,17 @@ namespace PaperMID.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult VerificarUsuario(string usuario,string contraseña)
+        public ActionResult VerificarUsuario(string usuario, string contraseña)
         {
             oLoginDAL = new LoginDAL();
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                if(oLoginDAL.verificarCliente(usuario,contraseña)==1)
+                if (oLoginDAL.verificarCliente(usuario, contraseña) == 1)
                 {
                     Session["Usuario"] = usuario;
                     return RedirectToAction("Inicio", "Cliente");
                 }
-                else if(oLoginDAL.verificarAdmin(usuario,contraseña)==1)
+                else if (oLoginDAL.verificarAdmin(usuario, contraseña) == 1)
                 {
                     Session["Usuario"] = usuario;
                     return RedirectToAction("Inicio", "Admin");
@@ -60,18 +60,18 @@ namespace PaperMID.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EnviarMensaje(string mensaje,string nombre,string asunto,string telefono,string correo)
+        public ActionResult EnviarMensaje(string mensaje, string nombre, string asunto, string telefono, string correo)
         {
             oMensajeDAL = new MensajeDAL();
             if (ModelState.IsValid)
             {
-                if(oMensajeDAL.Agregar(mensaje,nombre,asunto,telefono,correo)==1)
+                if (oMensajeDAL.Agregar(mensaje, nombre, asunto, telefono, correo) == 1)
                 {
                     return RedirectToAction("Contacto", "Publico");
                 }
                 else
                 {
-                    return RedirectToAction("Contacto","Publico");
+                    return RedirectToAction("Contacto", "Publico");
                 }
             }
             else
@@ -91,14 +91,14 @@ namespace PaperMID.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RegistrarUsuario(string usuario,string correo,string contra,string recontra)
+        public ActionResult RegistrarUsuario(string usuario, string correo, string contra, string recontra)
         {
             oUsuarioDAL = new UsuarioDAL();
             if (ModelState.IsValid)
             {
-               if(contra==recontra)
+                if (contra == recontra)
                 {
-                    if(oUsuarioDAL.Agregar(usuario,correo,contra)==1)
+                    if (oUsuarioDAL.AgregarCliente(usuario, correo, contra) == 1)
                     {
                         return RedirectToAction("Registro", "Publico");
                     }
@@ -107,7 +107,7 @@ namespace PaperMID.Controllers
                         return RedirectToAction("Registro", "Publico");
                     }
                 }
-               else
+                else
                 {
                     return RedirectToAction("Registro", "Publico");
                 }
@@ -117,5 +117,6 @@ namespace PaperMID.Controllers
                 return View();
             }
 
+        }
     }
 }

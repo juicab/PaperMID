@@ -39,10 +39,9 @@ namespace PaperMID.DAL
 
         public int verificarCliente(string usu, string contra)
         {
-            SqlCommand cmd = new SqlCommand("Select count(*) from Usuario where Usuario.Usuario='@Usuario' and Usuario.ContraseñaUsu='@Contraseña' and Usuario.IdTipoUsuario1=2");
-            cmd.Parameters.Add("@Usuario", SqlDbType.VarChar).Value = usu;
-            cmd.Parameters.Add("@Contraseña", SqlDbType.VarChar).Value = Encriptar(contra);
-            return oConexionDAL.EjecutarComando(cmd);
+            string contras = Encriptar(contra);
+            string query = ("Select count(*) from Usuario where Usuario.Usuario = '" + usu + "' and Usuario.ContraseñaUsu = '" + contras + "' and Usuario.IdTipoUsuario1 = 2");
+            return oConexionDAL.EjecutarSQL(query);
         }
 
 
