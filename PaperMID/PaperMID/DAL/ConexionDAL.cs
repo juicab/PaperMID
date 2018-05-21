@@ -16,12 +16,12 @@ namespace PaperMID.DAL
         DataSet DAtaSetAdaptador;
 
         String Servidor = "Data Source=SQL7004.site4now.net;Initial Catalog=DB_A386B8_PaperMID;User Id=DB_A386B8_PaperMID_admin;Password=Cs18191819;";
-        String localhost = "Data Source=Jesus_Uicab;Initial Catalog=DB_A386B8_PaperMID;Integrated Security=True";
+        String localhost = "Data Source=JESUS;Initial Catalog=DB_A386B8_PaperMID;Integrated Security=True";
         String estadia = "Data Source=Estadia;Initial Catalog=DB_A386B8_PaperMID;Integrated Security=True";
 
         public SqlConnection EstablecerConexion()
         {
-            Con = new SqlConnection(Servidor);
+            Con = new SqlConnection(localhost);
 
             return Con;
         }

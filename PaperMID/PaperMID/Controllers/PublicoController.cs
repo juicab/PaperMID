@@ -11,6 +11,8 @@ namespace PaperMID.Controllers
     {
         // GET: Publico
         LoginDAL oLoginDAL;
+        MensajeDAL oMensajeDAL;
+        UsuarioDAL oUsuarioDAL;
         public ActionResult Inicio()
         {
             return View();
@@ -60,7 +62,22 @@ namespace PaperMID.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EnviarMensaje(string mensaje,string nombre,string asunto,string telefono,string correo)
         {
-            return View();
+            oMensajeDAL = new MensajeDAL();
+            if (ModelState.IsValid)
+            {
+                if(oMensajeDAL.Agregar(mensaje,nombre,asunto,telefono,correo)==1)
+                {
+                    return RedirectToAction("Contacto", "Publico");
+                }
+                else
+                {
+                    return RedirectToAction("Contacto","Publico");
+                }
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult IniciarSesión()
@@ -72,5 +89,33 @@ namespace PaperMID.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RegistrarUsuario(string usuario,string correo,string contra,string recontra)
+        {
+            oUsuarioDAL = new UsuarioDAL();
+            if (ModelState.IsValid)
+            {
+               if(contra==recontra)
+                {
+                    if(oUsuarioDAL.Agregar(usuario,correo,contra)==1)
+                    {
+                        return RedirectToAction("Registro", "Publico");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Registro", "Publico");
+                    }
+                }
+               else
+                {
+                    return RedirectToAction("Registro", "Publico");
+                }
+            }
+            else
+            {
+                return View();
+            }
+
     }
 }
