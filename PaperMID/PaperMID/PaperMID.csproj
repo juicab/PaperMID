@@ -347,8 +347,6 @@
     <Content Include="Views\Publico\Contacto.cshtml" />
     <Content Include="Views\Publico\IniciarSesión.cshtml" />
     <Content Include="Views\Publico\Registro.cshtml" />
-    <None Include="Properties\PublishProfiles\papermid1 - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\papermid1 - Web Deploy.pubxml" />
     <Content Include="Views\Master\Administrador.cshtml" />
     <Content Include="Style\Back\css\bootstrap-theme.css.map" />
     <Content Include="Style\Back\css\bootstrap-theme.min.css.map" />
@@ -375,6 +373,8 @@
     <Content Include="Views\Inventario\Ingreso.cshtml" />
     <Content Include="Views\Inventario\Egreso.cshtml" />
     <Content Include="Views\Venta\Venta.cshtml" />
+    <None Include="Properties\PublishProfiles\papermid1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\papermid1 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

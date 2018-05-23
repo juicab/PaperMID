@@ -23,14 +23,16 @@ namespace PaperMID.Controllers
         public ActionResult VerificarUsuario(string usuario, string contraseña)
         {
             oLoginDAL = new LoginDAL();
+            int cliente = 0; cliente = oLoginDAL.verificarCliente(usuario, contraseña);
+            int admin = 0; admin = oLoginDAL.verificarAdmin(usuario, contraseña);
             if (ModelState.IsValid)
             {
-                if (oLoginDAL.verificarCliente(usuario, contraseña) == 1)
+                if (cliente == 1)
                 {
                     Session["Usuario"] = usuario;
                     return RedirectToAction("Inicio", "Cliente");
                 }
-                else if (oLoginDAL.verificarAdmin(usuario, contraseña) == 1)
+                else if (admin == 1)
                 {
                     Session["Usuario"] = usuario;
                     return RedirectToAction("Inicio", "Admin");

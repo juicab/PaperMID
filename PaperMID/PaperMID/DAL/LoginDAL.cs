@@ -30,20 +30,20 @@ namespace PaperMID.DAL
             return sb.ToString();
         }
 
-        public int verificarAdmin(string usu,string contra)
+        public int verificarAdmin(string usu, string contra)
         {
             string contras = Encriptar(contra);
-            string query = ("Select count(*) from Usuario where Usuario.Usuario = '" + usu + "' and Usuario.ContraseñaUsu = '" + contras + "' and Usuario.IdTipoUsuario1 = 1");
-            return oConexionDAL.EjecutarSQL(query);
+            SqlCommand Cmd = new SqlCommand("select count(*) from Usuario where Usuario.Usuario='" + usu + "' and Usuario.ContraseñaUsu='" + contras + "' and Usuario.IdTipoUsuario1=1");
+            return oConexionDAL.EjecutarComando(Cmd);
         }
+
 
         public int verificarCliente(string usu, string contra)
         {
             string contras = Encriptar(contra);
-            string query = ("Select count(*) from Usuario where Usuario.Usuario = '" + usu + "' and Usuario.ContraseñaUsu = '" + contras + "' and Usuario.IdTipoUsuario1 = 2");
-            return oConexionDAL.EjecutarSQL(query);
+            SqlCommand Cmd = new SqlCommand("select count(*) from Usuario where Usuario.Usuario='" + usu + "' and Usuario.ContraseñaUsu='" + contras + "' and Usuario.IdTipoUsuario1=2");
+            return oConexionDAL.EjecutarComando(Cmd);
         }
-
 
 
     }
