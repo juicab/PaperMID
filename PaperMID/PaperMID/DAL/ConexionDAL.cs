@@ -15,9 +15,7 @@ namespace PaperMID.DAL
         DataTable TablaVirtual;
         DataSet DAtaSetAdaptador;
 
-        String Servidor = "Data Source=SQL7004.site4now.net;Initial Catalog=DB_A386B8_PaperMID;User Id=DB_A386B8_PaperMID_admin;Password=Cs18191819;";
-        String localhost = "Data Source=JESUS;Initial Catalog=DB_A386B8_PaperMID;Integrated Security=True";
-        String estadia = "Data Source=Estadia;Initial Catalog=DB_A386B8_PaperMID;Integrated Security=True";
+        String Servidor = "Data Source=184.168.194.64;Initial Catalog=papermid;User ID=pmerida;Password=Ju.16090609;";
 
         public SqlConnection EstablecerConexion()
         {

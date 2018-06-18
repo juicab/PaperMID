@@ -4,5 +4,59 @@
     Layout = "~/Views/Master/Administrador.cshtml";
 }
 
-<h2>TipoProducto</h2>
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li class="active">Administrador</li>
+        </ol>
+    </div><!--/.row-->
 
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Departamentos</h2>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            @using (Ajax.BeginForm("Agregar", "TipoPorducto", new AjaxOptions { HttpMethod = "POST" }, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos</div>
+                    <div class="panel-body">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Código</label>
+                                <input class="form-control" type="text" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <label>Departamento</label>
+                                <input class="form-control" name="depto" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-md btn-info" value="Guardar" />
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                </div><!-- /.panel-->
+            }
+        </div><!-- /.panel-->
+    </div><!-- /.col-->
+    <div class="col-sm-12">
+        <p class="back-link">PaperMID de <a href="#">Papelería Mérida</a></p>
+    </div>
+</div><!-- /.row -->
+<!--/.main-->

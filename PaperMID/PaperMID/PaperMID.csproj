@@ -191,6 +191,7 @@
     <Content Include="Style\img\svg\arrow_left.svg" />
     <Content Include="Style\img\svg\arrow_right.svg" />
     <Content Include="Style\img\tajador.jpg" />
+    <Content Include="Style\img\user.png" />
     <Content Include="Style\img\valores.png" />
     <Content Include="Style\img\vision.png" />
     <Content Include="Style\js\bootstrap.js" />
@@ -247,6 +248,7 @@
     <Compile Include="Controllers\VentaController.cs" />
     <Compile Include="DAL\ConexionDAL.cs" />
     <Compile Include="DAL\DatosFiscalesDAL.cs" />
+    <Compile Include="DAL\DeptoDAL.cs" />
     <Compile Include="DAL\DireccionDAL.cs" />
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\MensajeDAL.cs" />
@@ -255,6 +257,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DeptoModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
