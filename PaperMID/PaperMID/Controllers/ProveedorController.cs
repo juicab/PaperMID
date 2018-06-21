@@ -23,7 +23,8 @@ namespace PaperMID.Controllers
             oProveedorDAL = new ProveedorDAL();
             if (ModelState.IsValid)
             {
-                int Resp = 0; Resp = oProveedorDAL.Agregar(nombre, telefon, correo);
+                int Resp = 0;
+                Resp = oProveedorDAL.Agregar(nombre, telefon, correo);
                 if (Resp == 1)
                 {
                    

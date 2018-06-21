@@ -252,6 +252,7 @@
     <Compile Include="DAL\DireccionDAL.cs" />
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\MensajeDAL.cs" />
+    <Compile Include="DAL\PromocionesDAL.cs" />
     <Compile Include="DAL\ProveedorDAL.cs" />
     <Compile Include="DAL\UsuarioDAL.cs" />
     <Compile Include="Global.asax.cs">
