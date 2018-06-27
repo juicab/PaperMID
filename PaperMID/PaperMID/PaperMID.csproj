@@ -158,6 +158,7 @@
     <Content Include="Style\img\Favicon\logopage.png" />
     <Content Include="Style\img\footer.png" />
     <Content Include="Style\img\google-play.png" />
+    <Content Include="Style\img\LogoWeb2.png" />
     <Content Include="Style\img\parallax\granmarkbanner.png" />
     <Content Include="Style\img\parallax\header54barrilito.jpg" />
     <Content Include="Style\img\image.png" />
@@ -252,6 +253,7 @@
     <Compile Include="DAL\DireccionDAL.cs" />
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\MensajeDAL.cs" />
+    <Compile Include="DAL\ProductoDAL.cs" />
     <Compile Include="DAL\PromocionesDAL.cs" />
     <Compile Include="DAL\ProveedorDAL.cs" />
     <Compile Include="DAL\UsuarioDAL.cs" />

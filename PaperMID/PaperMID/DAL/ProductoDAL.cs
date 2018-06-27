@@ -8,25 +8,25 @@ using PaperMID.Models;
 
 namespace PaperMID.DAL
 {
-    public class PromocionesDAL
+    public class ProductoDAL
     {
         ConexionDAL oConexionDAL;
-        public PromocionesDAL() { oConexionDAL = new ConexionDAL(); }
+        public ProductoDAL() { oConexionDAL = new ConexionDAL(); }
 
-        public int Agregar(string nombre,double desc, string fchini, string fchfin,string comentario,string prov)
+        public int Agregar(string nombre, double desc, string fchini, string fchfin, string comentario, string prov)
         {
             string day = DateTime.Now.Day.ToString();
             string month = DateTime.Now.Month.ToString();
             string year = DateTime.Now.Year.ToString();
             string date = year + "/" + month + "/" + day;
             string query = ("INSERT INTO [dbo].[Promociones]([NombrePromo],[DescripcionPromo],[DescuentoPromo],[FechaInicioPromo],[FechaFinPromo],[IdProveedor1],[FechaRegistroPromo],[StatusPromo]) VALUES(" +
-                "'"+nombre+"'" +
-                ",'"+comentario+"'" +
-                ","+desc+"" +
-                ",'"+fchini+"'" +
-                ",'"+fchfin+"'" +
-                ","+prov+"" +
-                ",'"+date+"'" +
+                "'" + nombre + "'" +
+                ",'" + comentario + "'" +
+                "," + desc + "" +
+                ",'" + fchini + "'" +
+                ",'" + fchfin + "'" +
+                "," + prov + "" +
+                ",'" + date + "'" +
                 ",1)");
             return oConexionDAL.EjecutarSQL(query);
         }
