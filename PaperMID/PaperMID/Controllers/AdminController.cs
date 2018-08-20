@@ -19,5 +19,15 @@ namespace PaperMID.Controllers
             Session.Abandon();
             return RedirectToAction("Inicio", "Publico");
         }
+
+        public ActionResult Configuracion()
+        {
+            return View();
+        }
+
+        public ActionResult ModificarDatos()
+        {
+            return View();
+        }
     }
 }

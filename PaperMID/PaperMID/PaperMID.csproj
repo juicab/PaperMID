@@ -158,6 +158,7 @@
     <Content Include="Style\img\Favicon\logopage.png" />
     <Content Include="Style\img\footer.png" />
     <Content Include="Style\img\google-play.png" />
+    <Content Include="Style\img\Libreta.jpg" />
     <Content Include="Style\img\LogoWeb2.png" />
     <Content Include="Style\img\parallax\granmarkbanner.png" />
     <Content Include="Style\img\parallax\header54barrilito.jpg" />
@@ -186,6 +187,7 @@
     <Content Include="Style\img\overlays\08.png" />
     <Content Include="Style\img\overlays\09.png" />
     <Content Include="Style\img\parallax\bannerBic.png" />
+    <Content Include="Style\img\Plumin.jpg" />
     <Content Include="Style\img\Servicios\cart.png" />
     <Content Include="Style\img\Servicios\entrega.png" />
     <Content Include="Style\img\Servicios\paypal.png" />
@@ -381,6 +383,7 @@
     <Content Include="Views\Venta\Venta.cshtml" />
     <None Include="Properties\PublishProfiles\papermid1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\papermid1 - Web Deploy.pubxml" />
+    <Content Include="Views\Admin\Configuracion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

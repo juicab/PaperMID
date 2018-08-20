@@ -12,7 +12,9 @@ else
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lumino - Dashboard</title>
+    <title>PAPERMID-ADMIN</title>
+    <meta name="description" content="PaperMID Productos de Calidad" />
+    <link rel="icon" type="image/png" href="~/Style/img/Favicon/logopage.png" />
     <link href="~/Style/Back/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Style/Back/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Style/Back/css/datepicker3.css" rel="stylesheet" />
@@ -42,7 +44,7 @@ else
                         </a>
                         <ul class="dropdown-menu dropdown-messages">
                             <li>
-                                <a href="#">
+                                <a href="@Url.Action("Configuracion","Admin")">
                                     <em class="fa fa-cog"></em> Configuración
                                 </a>
                             </li>
@@ -54,39 +56,6 @@ else
                             </li>
                         </ul>
                     </li>
-                    @*<li class="dropdown">
-                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                            <em class="fa fa-bell"></em><span class="label label-info">5</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-alerts">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <em class="fa fa-envelope"></em> 1 New Message
-                                        <span class="pull-right text-muted small">3 mins ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <em class="fa fa-heart"></em> 12 New Likes
-                                        <span class="pull-right text-muted small">4 mins ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <em class="fa fa-user"></em> 5 New Followers
-                                        <span class="pull-right text-muted small">4 mins ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>*@
                 </ul>
             </div>
         </div><!-- /.container-fluid -->
