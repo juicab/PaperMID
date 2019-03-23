@@ -30,5 +30,40 @@ namespace PaperMID.DAL
                 ",1)");
             return oConexionDAL.EjecutarSQL(query);
         }
+
+        public List<DeptoModel> ListaDeptos()
+        {
+            string query = ("Select IdTipoProducto,TipoProd from TipoProducto where StatusTpro=1");
+            var result = oConexionDAL.TablaConnsulta(query);
+            List<DeptoModel> listaDeptos = new List<DeptoModel>();
+            foreach (DataRow depto in result.Rows)
+            {
+                var deptoModel = new DeptoModel();
+                deptoModel.IdTipoProducto = int.Parse(depto[0].ToString());
+                deptoModel.TipoProducto = depto[1].ToString();
+                listaDeptos.Add(deptoModel);
+            }
+            return listaDeptos;
+
+        }
+
+        public List<ProveedorModel> ListaProveedores()
+        {
+            string query = ("select IdProveedor,NombreProv from Proveedor where StatusProv=1");
+            var result = oConexionDAL.TablaConnsulta(query);
+            List<ProveedorModel> listaProveedor = new List<ProveedorModel>();
+            foreach (DataRow provee in result.Rows)
+            {
+                var proveedorModel = new ProveedorModel();
+                proveedorModel.idProveedor = int.Parse(provee[0].ToString());
+                proveedorModel.NombreProv = provee[1].ToString();
+                listaProveedor.Add(proveedorModel);
+            }
+            return listaProveedor;
+
+        }
+
+
+
     }
 }

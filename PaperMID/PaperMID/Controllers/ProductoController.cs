@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PaperMID.DAL;
+using PaperMID.Models;
 
 namespace PaperMID.Controllers
 {
@@ -40,5 +41,24 @@ namespace PaperMID.Controllers
             }
 
         }
+
+        [ChildActionOnly]
+        public ActionResult ParcialDeptos()
+        {
+            oProductoDAL = new ProductoDAL();
+            var productoModel = new ProductoModel();
+            productoModel.TiposProducto = oProductoDAL.ListaDeptos();
+            return PartialView(productoModel);
+        }
+
+        [ChildActionOnly]
+        public ActionResult ParcialProvedores()
+        {
+            oProductoDAL = new ProductoDAL();
+            var proveedorModel = new ProductoModel();
+            proveedorModel.Proveedores = oProductoDAL.ListaProveedores();
+            return PartialView(proveedorModel);
+        }
+
     }
 }

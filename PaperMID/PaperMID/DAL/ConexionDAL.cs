@@ -37,8 +37,7 @@ namespace PaperMID.DAL
         public int EjecutarSQL(string Sentencia)
         {
             //Inserts,Deletes,Updates
-            try
-            {
+
                 Cmd = new SqlCommand();
                 Cmd.Connection = EstablecerConexion();
                 AbrirConexion();
@@ -46,15 +45,8 @@ namespace PaperMID.DAL
                 int Confirmacion = Cmd.ExecuteNonQuery();
                 CerrarConexion();
                 return 1;
-            }
-            catch (SqlException)
-            {
-                return 0;
-            }
-            finally
-            {
-                CerrarConexion();
-            }
+            
+
         }
 
         public int EjecutarComando(SqlCommand SqlComando)

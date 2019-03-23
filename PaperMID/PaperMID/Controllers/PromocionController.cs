@@ -40,5 +40,12 @@ namespace PaperMID.Controllers
             }
 
         }
+
+        [ChildActionOnly]
+        public ActionResult ListarPromociones()
+        {
+            oPromocionDAL = new PromocionesDAL();
+            return PartialView(oPromocionDAL.Mostrar());
+        }
     }
 }

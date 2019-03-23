@@ -41,5 +41,14 @@ namespace PaperMID.Controllers
             }
              
         }
+
+        [ChildActionOnly]
+        public ActionResult MostrarListaProveedor()
+        {
+            oProveedorDAL = new ProveedorDAL();
+            return PartialView(oProveedorDAL.Mostrar());
+        }
+
+
     }
 }

@@ -27,7 +27,7 @@
   background: linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
 }
 .fondo {
-    background: url('../img/tajador.jpg') no-repeat center center;
+    background: url('../img/tajador.png') no-repeat center center;
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;

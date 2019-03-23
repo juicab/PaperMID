@@ -1,0 +1,97 @@
+﻿@model PaperMID.Models.ConfiguracionModel
+@{
+    ViewBag.Title = "Configuracion";
+    Layout = "~/Views/Master/Administrador.cshtml";
+}
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li class="active">Administrador</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Configuración</h2>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Datos</div>
+                @using (Ajax.BeginForm("ModificarDatos", "Admin", new AjaxOptions { HttpMethod = "POST" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="panel-body">
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <label>Código</label>
+                                <input class="form-control" type="text" name="cod" disabled value="@Model.IdPapeleria" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input class="form-control" type="text" value="@Model.NombrePape" name="nombre">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Correo Electrónico</label>
+                                <input class="form-control" type="text" value="@Model.CorreoPape" name="correo">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Teléfono</label>
+                                <input class="form-control" type="text" value="@Model.TelefenoPape" name="telefono">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Misión</label>
+                                <textarea name="mision" class="form-control" rows="4">@Model.MisionPape</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Visión</label>
+                                <textarea name="vision" class="form-control" rows="4">@Model.VisionPape</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Valores</label>
+                                <textarea name="valores" class="form-control" rows="4">@Model.ValoresPape</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-md btn-info" value="Guardar" />
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                }
+                </div><!-- /.panel-->
+        </div><!-- /.panel-->
+    </div><!-- /.col-->
+    <div class="col-sm-12">
+        <p class="back-link">PaperMID de <a href="#">Papelería Mérida</a></p>
+    </div>
+</div><!-- /.row -->
+<!--/.main-->

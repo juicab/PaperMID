@@ -7,6 +7,9 @@ namespace PaperMID.Models
 {
     public class DeptoModel
     {
-        public int IdTipo;
+        public int IdTipoProducto { get; set; }
+        public string TipoProducto { get; set; }
+        public DateTime FechaRegistroTpro { get; set; }
+        public Boolean StatusTpro { get; set; }
     }
 }

@@ -24,5 +24,12 @@ namespace PaperMID.DAL
                 "('"+depto+"','"+date+"','True')");
             return oConexionDAL.EjecutarSQL(query);
         }
+
+        public DataTable Mostrar()
+        {
+            return oConexionDAL.TablaConnsulta("Select *From TipoProducto Where StatusTpro=1");
+        }
+
+
     }
 }

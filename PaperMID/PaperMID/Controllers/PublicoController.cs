@@ -13,6 +13,7 @@ namespace PaperMID.Controllers
         LoginDAL oLoginDAL;
         MensajeDAL oMensajeDAL;
         UsuarioDAL oUsuarioDAL;
+        ConfiguracionDAL oConfiguracionDAL;
         public ActionResult Inicio()
         {
             return View();
@@ -52,7 +53,8 @@ namespace PaperMID.Controllers
 
         public ActionResult QuiénesSomos()
         {
-            return View();
+            oConfiguracionDAL = new ConfiguracionDAL();
+            return View(oConfiguracionDAL.Obtener_Empresa());
         }
 
         public ActionResult Contacto()

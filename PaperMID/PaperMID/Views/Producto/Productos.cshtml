@@ -80,39 +80,8 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Tipo de Producto</label>
-                            <select class="form-control">
-                                <option value="29">Papelería</option>
-                                <option value="30">Novedades</option>
-                                <option value="31">Papel de Regalo</option>
-                                <option value="32">Bolsa de Regalo</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Proveedor</label>
-                            <select class="form-control">
-                                <option value="47">Barrilito</option>
-                                <option value="48">Delta</option>
-                                <option value="49">Granmark</option>
-                                <option value="50">Bic</option>
-                                <option value="51">Navitek</option>
-                                <option value="52">Kole</option>
-                                <option value="53">Indra/option>
-                                <option value="54">Dietrix</option>
-                                <option value="55">First Class</option>
-                                <option value="56">Mussa</option>
-                                <option value="57">Ribocel</option>
-                                <option value="58">Picelitos</option>
-                                <option value="59">Mae</option>
-                                <option value="60">Artline</option>
-                                <option value="61">A-ink</option>
-                            </select>
-                        </div>
-                    </div>
+                    @{Html.RenderAction("ParcialDeptos", "Producto");}
+                    @{Html.RenderAction("ParcialProvedores", "Producto");}
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Seleccione Imagen</label>

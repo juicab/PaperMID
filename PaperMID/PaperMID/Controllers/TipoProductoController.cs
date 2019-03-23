@@ -41,5 +41,15 @@ namespace PaperMID.Controllers
 
         }
 
+        [ChildActionOnly]
+        public ActionResult MostrarTProd()
+        {
+            oDeptoDAL = new DeptoDAL();
+            return PartialView(oDeptoDAL.Mostrar());
+        }
+
+
+
+
     }
 }
