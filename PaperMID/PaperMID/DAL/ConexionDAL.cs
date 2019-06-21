@@ -15,7 +15,7 @@ namespace PaperMID.DAL
         DataTable TablaVirtual;
         DataSet DAtaSetAdaptador;
 
-        String Servidor = "Data Source=184.168.194.64;Initial Catalog=papermid;User ID=pmerida;Password=Ju.16090609;";
+        String Servidor = "Data Source=198.71.227.2;Initial Catalog=papermid;User ID=pmid;Password=Cs18191819;";
 
         public SqlConnection EstablecerConexion()
         {

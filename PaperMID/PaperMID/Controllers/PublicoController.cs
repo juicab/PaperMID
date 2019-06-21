@@ -64,23 +64,29 @@ namespace PaperMID.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EnviarMensaje(string mensaje, string nombre, string asunto, string telefono, string correo)
+        public ActionResult EnviarMensaje(string nombre, string correo, string asunto, string telefono, string mensaje)
         {
             oMensajeDAL = new MensajeDAL();
             if (ModelState.IsValid)
             {
-                if (oMensajeDAL.Agregar(mensaje, nombre, asunto, telefono, correo) == 1)
+                int Resp = 0;
+                Resp = oMensajeDAL.AgregarEnMerida(nombre, correo, asunto, telefono, mensaje);
+                if (Resp == 1)
                 {
+                    TempData["Mensaje"] = "Los Datos se han actualizado con éxito";
                     return RedirectToAction("Contacto", "Publico");
                 }
                 else
                 {
+                    ViewBag.error = "Al parecer hubo un Error";
                     return RedirectToAction("Contacto", "Publico");
                 }
+
             }
             else
             {
-                return View();
+                ViewBag.error = "Al parecer hubo un Error";
+                return RedirectToAction("Contacto", "Publico");
             }
         }
 

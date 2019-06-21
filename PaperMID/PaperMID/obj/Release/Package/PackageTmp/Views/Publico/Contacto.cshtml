@@ -10,6 +10,18 @@
 </div>
 <div>
     <div class="container">
+        @if (TempData["Mensaje"] != null)
+        {
+            <div class="alert alert-success col-md-12" style="text-align:center;" role="alert">
+                <strong>¡BIEN!</strong> Su mensaje ha sido enviado con éxito. <strong>Pronto nos contactaremos con usted.</strong>
+            </div>
+        }
+        @if (ViewBag.error != null)
+        {
+            <div class="alert alert-danger col-md-12" style="text-align:center;" role="alert">
+                <strong>¡OOPS!</strong> Al parecer hubo un error intentalo de nuevo más tarde.
+            </div>
+        }
         @using (Ajax.BeginForm("EnviarMensaje", "Publico", new AjaxOptions { HttpMethod = "POST" }, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()

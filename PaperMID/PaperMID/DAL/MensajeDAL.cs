@@ -11,7 +11,9 @@ namespace PaperMID.DAL
     public class MensajeDAL
     {
         ConexionDAL oConexionDAL;
-        public MensajeDAL() { oConexionDAL = new ConexionDAL(); }
+
+        ConexionMeridaDAL oConexionMeridaDAL;
+        public MensajeDAL() { oConexionDAL = new ConexionDAL(); oConexionMeridaDAL = new ConexionMeridaDAL(); }
 
         public int Agregar(string mensaje, string nombre, string asunto, string telefono, string correo)
         {
@@ -22,5 +24,13 @@ namespace PaperMID.DAL
             string query = ("INSERT INTO [dbo].[Mensaje]([Mensaje],[Nombre],[Asunto],[Telefono],[Correo],[Usuario],[Estatus]) VALUES('"+mensaje+"','"+nombre+"','"+asunto+"','"+telefono+"','"+correo+"',"+11+","+1+")");
             return oConexionDAL.EjecutarSQL(query);
         }
+
+        public int AgregarEnMerida(string nombre, string correo, string asunto, string telefono, string mensaje)
+        {
+            string query = "INSERT INTO [dbo].[Mensaje]([nombre],[correo],[asunto],[telefono],[pagina],[mensaje],[statusMen]) VALUES ('" + nombre + "','" + correo + "','" + asunto + "','" + telefono + "','PaperMID','" + mensaje + "',1)";
+            return oConexionMeridaDAL.EjecutarSQL(query);
+        }
+
+
     }
 }

@@ -22,6 +22,6 @@ namespace PaperMID.Models
         public DateTime FechaRegistroProd { get; set; }
         public Boolean StatusProd { get; set; }
         public List<ProveedorModel> Proveedores { get; set; }
-        public List<DeptoModel> TiposProducto { get; set; }
+        public List<DeptoModel> TiposProducto { get; set;}
     }
 }

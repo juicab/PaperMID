@@ -250,6 +250,7 @@
     <Compile Include="Controllers\TipoProductoController.cs" />
     <Compile Include="Controllers\VentaController.cs" />
     <Compile Include="DAL\ConexionDAL.cs" />
+    <Compile Include="DAL\ConexionMeridaDAL.cs" />
     <Compile Include="DAL\ConfiguracionDAL.cs" />
     <Compile Include="DAL\DatosFiscalesDAL.cs" />
     <Compile Include="DAL\DeptoDAL.cs" />
@@ -386,14 +387,13 @@
     <Content Include="Views\Inventario\Ingreso.cshtml" />
     <Content Include="Views\Inventario\Egreso.cshtml" />
     <Content Include="Views\Venta\Venta.cshtml" />
-    <None Include="Properties\PublishProfiles\papermid1 - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\papermid1 - Web Deploy.pubxml" />
     <Content Include="Views\Admin\Configuracion.cshtml" />
     <Content Include="Views\Proveedor\MostrarListaProveedor.cshtml" />
     <Content Include="Views\TipoProducto\MostrarTProd.cshtml" />
     <Content Include="Views\Promocion\ListarPromociones.cshtml" />
     <Content Include="Views\Producto\ParcialDeptos.cshtml" />
     <Content Include="Views\Producto\ParcialProvedores.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

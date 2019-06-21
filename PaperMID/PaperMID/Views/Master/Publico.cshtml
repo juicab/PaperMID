@@ -85,7 +85,7 @@
                 </form>*@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item prod"><a class="nav-link active" href="#">Productos</a></li>
+                        <li class="nav-item prod "><a class="nav-link active" href="#">Productos</a></li>
                         <li class="nav-item qui"><a class="nav-link active" href="@Url.Action("QuiénesSomos","Publico")">Quiénes Somos</a></li>
                         <li class="nav-item cont"><a class="nav-link active" href="@Url.Action("Contacto","Publico")">Contacto</a></li>
                         <li class="nav-item ini dropdown">
@@ -95,7 +95,7 @@
                                 <a class="dropdown-item" href="#">Citas</a>
                             </div>
                         </li>
-                    </ul><a class="btn reg btn-rounded my-0" href="@Url.Action("IniciarSesión","Publico")">Iniciar Sesión</a>
+                    </ul>@*<a class="btn reg btn-rounded my-0 disabled" href="@Url.Action("IniciarSesión","Publico")">Iniciar Sesión</a>*@
                     @*@Url.Action("Registro", "Publico")*@
                 </div>
             </div>
@@ -109,7 +109,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="flex-center" style="align-content:center; align-items:center;">
-                        <img src="~/Style/img/footer.png" style="width:760px; height:50px;"/>
+                        <img src="~/Style/img/footer.png" style="width:760px; height:50px;" />
                     </div>
                 </div>
             </div>
@@ -119,6 +119,7 @@
                 <p>&copy; <a href="/">PaperMID</a> - Derechos Reservados</p>
             </div>
         </div>
+        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
     </footer>
     <script src="~/Style/js/jquery-3.2.1.min.js"></script>
     <script src="~/Style/js/popper.min.js"></script>
